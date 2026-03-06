@@ -1,0 +1,37 @@
+### ==============================
+### 1️⃣ REGISTRO DE USUARIO
+### ==============================
+
+POST http://127.0.0.1:8000/users/register
+Content-Type: application/json
+
+{
+  "email": "usuario1@correo.com",
+  "password": "MiSuperPassword123"
+}
+
+###
+
+### ==============================
+### 2️⃣ LOGIN
+### ==============================
+
+# @name login
+POST http://127.0.0.1:8000/users/login
+Content-Type: application/json
+
+{
+  "email": "usuario1@correo.com",
+  "password": "MiSuperPassword123"
+}
+
+###
+
+@token = {{login.response.body.access_token}}
+
+### ==============================
+### 3️⃣ OBTENER USUARIO ACTUAL
+### ==============================
+
+GET http://127.0.0.1:8000/users/me
+Authorization: Bearer {{token}}
